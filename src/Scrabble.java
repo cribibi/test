@@ -4,12 +4,19 @@ public class Scrabble {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Type a sentence of maximum 10 words: ");
+        System.out.println("Type the words you want: ");
         String sentence = scanner.nextLine();
         String[] words = sentence.split(" ");
-        if (words.length > 10) {
-            System.out.println("This sentence has more than 10 letters.");
-        } else {
+        boolean b = false;
+
+        for (int i = 0; i < words.length; i++) {
+            if (words[i].length() > 10) {
+                System.out.println(words[i] + " has more than 10 letters");
+                b = true;
+            }
+        }
+
+        if (b == false) {
             int score = 0;
             int maxScore = 0;
             String x = "";
