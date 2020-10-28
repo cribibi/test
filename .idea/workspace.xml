@@ -37,7 +37,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PigLatin">
+  <component name="RunManager" selected="Application.Scrabble">
     <configuration name="PigLatin" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="PigLatin" />
       <module name="test" />
@@ -54,8 +54,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PigLatin" />
         <item itemvalue="Application.Scrabble" />
+        <item itemvalue="Application.PigLatin" />
       </list>
     </recent_temporary>
   </component>

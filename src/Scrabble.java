@@ -1,91 +1,66 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Scrabble {
     public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please insert a number of words");
-        int nrOfWords = scan.nextInt();
-        String word;
 
-        List<String> wordList = new ArrayList<>();
-        for (int i = 0; i < nrOfWords; i++) {
-            System.out.println("Please insert word nr " + (i + 1));
-            word = scan.next().toLowerCase();
-            if (word.length() <= 10) {
-                wordList.add(word);
-            } else {
-                System.out.println("Each word should be max 10 letters. This word will not be used");
-            }
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Type a sentence of maximum 10 words: ");
+        String sentence = scanner.nextLine();
+        String[] words = sentence.split(" ");
+        if (words.length > 10) {
+            System.out.println("This sentence has more than 10 letters.");
+        } else {
+            int score = 0;
+            int maxScore = 0;
+            String x = "";
 
-        }
-
-
-        int value = 0;
-        Map<String, Integer> map = new HashMap<>();
-
-        for (String s : wordList) {
-            int totalValue = 0;
-            for (int i = 0; i < s.length(); i++) {
-                switch (s.charAt(i)) {
-                    case 'q':
-                    case 'z':
-                        value = 10;
-                        break;
-                    case 'j':
-                    case 'x':
-                        value = 8;
-                        break;
-                    case 'k':
-                        value = 5;
-                        break;
-                    case 'f':
-                    case 'h':
-                    case 'v':
-                    case 'w':
-                    case 'y':
-                        value = 4;
-                        break;
-                    case 'b':
-                    case 'c':
-                    case 'm':
-                    case 'p':
-                        value = 3;
-                        break;
-                    case 'd':
-                    case 'g':
-                        value = 2;
-                        break;
-                    case 'e':
-                    case 'a':
-                    case 'i':
-                    case 'o':
-                    case 'n':
-                    case 'r':
-                    case 't':
-                    case 'l':
-                    case 's':
-                    case 'u':
-                        value = 1;
-                        break;
-                    default:
-                        value = 0;
+            for (int i = 0; i < words.length; i++) {
+                for (int j = 0; j < words[i].length(); j++) {
+                    score = score + returnValue(String.valueOf(words[i].charAt(j)));
                 }
-
-                totalValue += value;
-
+                if (score > maxScore) {
+                    maxScore = score;
+                    x = words[i];
+                }
+                score = 0;
             }
-
-            //System.out.println("Total value of word "+s+" is "+totalValue);
-            map.put(s, totalValue);
-
-
+            System.out.println(x);
+            System.out.println(maxScore);
         }
+    }
 
-        System.out.println(map);
+    public static int returnValue(String letter) {
+        letter = letter.toLowerCase();
+        String li1 = "aeiounrtls";
+        int l1 = 1;
+        String li2 = "dg";
+        int l2 = 2;
+        String li3 = "bcmp";
+        int l3 = 3;
+        String li4 = "fhvwy";
+        int l4 = 4;
+        String li5 = "k";
+        int l5 = 5;
+        String li6 = "jx";
+        int l6 = 8;
+        String li7 = "qz";
+        int l7 = 10;
 
-        String maxValue = Collections.max(map.entrySet(), (entry1, entry2) -> entry1.getValue() - entry2.getValue()).getKey();
-        System.out.println(maxValue);
-
+        if (li1.contains(letter)) {
+            return l1;
+        } else if (li2.contains(letter)) {
+            return l2;
+        } else if (li3.contains(letter)) {
+            return l3;
+        } else if (li4.contains(letter)) {
+            return l4;
+        } else if (li5.contains(letter)) {
+            return l5;
+        } else if (li6.contains(letter)) {
+            return l6;
+        } else if (li7.contains(letter)) {
+            return l7;
+        } else return 0;
     }
 
 }
