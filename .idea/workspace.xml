@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="27b559f5-2182-4ecd-a62d-2e5105d66aef" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/PigLatin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Scrabble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Scrabble.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
